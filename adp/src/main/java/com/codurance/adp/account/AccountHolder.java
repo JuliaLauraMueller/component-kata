@@ -1,23 +1,24 @@
 package com.codurance.adp.account;
 
-import com.codurance.adp.user.User;
+import com.codurance.adp.bank.BankApplication;
 
 public class AccountHolder {
+    private BankApplication ba;
 
-    private User user;
-
-    public void setUser(User newUser) {
-        user = newUser;
+    public void setBankApplication(BankApplication newBA) {
+        ba = newBA;
     }
 
-    synchronized void depositFunds(String username, double amount) {
-        // Use a utility method of User to check whether username exists
-        if (user.exists(username)) {
+    public synchronized void depositFunds(BankApplication ba,
+                                          String username, double amount) {
+        // Use a utility method of UserDetails
+        // to check whether username exists
+        if (ba.exists(username)) {
             // Deposit the amount
         }
     }
 
-    protected double getBalance(String accountNumber) {
+    public double getBalance(String accountNumber) {
         // Return the account balance
         return 1.0;
     }
