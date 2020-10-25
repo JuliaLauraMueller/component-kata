@@ -1,6 +1,5 @@
 package com.codurance.adp.account;
 
-
 import com.codurance.adp.user.User;
 
 public class AccountHolder {
